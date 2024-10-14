@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Rectangle:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Rectangle_jar</output-path>
+    <root id="archive" name="Rectangle.jar">
+      <element id="module-output" name="Rectangle" />
+    </root>
+  </artifact>
+</component>
