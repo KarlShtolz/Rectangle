@@ -3,8 +3,20 @@ package org.example;
 import java.util.Scanner;
 
 public class Player {
+    /**
+     * экземпляр класса Scanner для получения данных от пользователя
+     */
     public static Scanner sc;
+    /**
+     * массив для хранения координат от пользователя
+     */
     public static int [] coordinates = new int[]{-1, -1, -1, -1};
+
+    /**
+     * метод описывает действия каждого игрока, при наступлении его очереди
+     * @param player
+     * @throws InterruptedException
+     */
     public static void playGame (int player) throws InterruptedException {
         sc = new Scanner(System.in);
         String ans = "";
@@ -27,6 +39,11 @@ public class Player {
         }
         coordinates = new int[] {-1, -1, -1, -1};
     }
+
+    /**
+     * метод для получения координат от пользователя с помощью Scanner и
+     * проверки данных, вводимых пользователем
+     */
     public static void getArrCoordinates () {
         sc = new Scanner(System.in);
         String tmp = "";

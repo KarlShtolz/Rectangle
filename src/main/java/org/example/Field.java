@@ -1,9 +1,19 @@
 package org.example;
 
 public class Field {
-
+    /**
+     * ширина игрового поля
+     */
     public static int fieldSide;
+    /**
+     * двумерный массив символов используемый в качестве поля
+     */
     private static char [][] field;
+
+    /**
+     * создает двумерный массив по заданным пользователям размерам
+     * и заполняет его символами пустых ячеек поля
+     */
     public static void initField () {
         field = new char[fieldSide][fieldSide];
         for (int i = 0; i < fieldSide; i++) {
@@ -12,6 +22,16 @@ public class Field {
             }
         }
     }
+
+    /**
+     * метод получает индекс игрока, координаты прямоугольника игрока
+     * и заполняет выбранный прямоугольник в матрице символом данного игрока
+     * @param gamer
+     * @param yStart
+     * @param xStart
+     * @param yEnd
+     * @param xEnd
+     */
     public static void setRectangleOnField (int gamer, int yStart, int xStart, int yEnd, int xEnd) {
         char gamerChar;
         int tmp;
@@ -36,10 +56,19 @@ public class Field {
             }
         }
     }
-    public static int checkEndGame (int yStart, int xStart, int yEnd, int xEnd) {
+
+    /**
+     * TODO метод проверки состояния игры на предмет невозможности хода
+     * @return
+     */
+    public static int checkEndGame () {
 
         return 0;
     }
+
+    /**
+     * метод выводит на экран результаты игроков
+     */
     public static void gamersResult () {
         int countGamer1 = 0;
         int countGamer2 = 0;
@@ -53,9 +82,22 @@ public class Field {
                 }
             }
         }
-        System.out.println("Gamer 1 result = " + countGamer1);
-        System.out.println("Gamer 2 result = " + countGamer2);
+        System.out.println(StringConstants.FIRST_PLAYER_GAME_RESULT + countGamer1);
+        System.out.println(StringConstants.SECOND_PLAYER_GAME_RESULT + countGamer2);
     }
+
+    /**
+     * метод проверяет координаты введенные игроком
+     * на предмет соответствия правилам игры
+     * @param yStart
+     * @param xStart
+     * @param yEnd
+     * @param xEnd
+     * @return -1 - индекс за пределами поля
+     *         -2 - индексы создают рпямоугольник неверного размера(относительно выпавших игроку размеров)
+     *         -3 - попытка использовать занятую ячейку
+     *          0 - положительный результат проверки
+     */
     public static int checkUserRectangleBounds (int yStart, int xStart, int yEnd, int xEnd) {
         if (xStart < 0 || yStart < 0 || xEnd < 0 || yEnd < 0
                 || xStart > fieldSide - 1 || xEnd > fieldSide - 1
@@ -82,6 +124,10 @@ public class Field {
         }
         return 0;
     }
+
+    /**
+     * метод транспонирует матрицу, чтобы оба игрока видели поле симметрично
+     */
     public static void transparentMatrix() {
         char [][] arr = new char[fieldSide][fieldSide];
         for (int i = 0; i < fieldSide; i++) {
@@ -91,6 +137,10 @@ public class Field {
         }
         field = arr;
     }
+
+    /**
+     * матод выводит текущее состояние поля
+     */
     public static void printField () {
         System.out.print("   ");
         for (int k = 0; k < fieldSide; k++) {

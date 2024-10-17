@@ -1,18 +1,47 @@
 package org.example;
 
 public class StringConstants {
-    public static final String RESET = "\u001B[0m";
+    /**
+     * цвет для консольного вывода(RED)
+     */
     public static final String RED = "\u001B[31m";
+    /**
+     * цвет для консольного вывода(GREEN)
+     */
     public static final String GREEN = "\u001B[32m";
+    /**
+     * цвет для консольного вывода(YELLOW)
+     */
     public static final String YELLOW = "\u001B[33m";
+    /**
+     * цвет для консольного вывода(BLUE)
+     */
     public static final String BLUE = "\u001B[34m";
+    /**
+     * цвет для консольного вывода(PURPLE)
+     */
     public static final String PURPLE = "\u001B[35m";
+    /**
+     * цвет для консольного вывода(CYAN)
+     */
     public static final String CYAN = "\u001B[36m";
+    /**
+     * цвет для консольного вывода(WHITE)
+     */
     public static final String WHITE = "\u001B[37m";
+    /**
+     * символ для обозначения поля первого игрока
+     */
     public static char gamer1_sign = '$';
+    /**
+     * символ для обозначения поля второго игрока
+     */
     public static char gamer2_sign = '%';
+    /**
+     * символ для обозначения пустой ячейки на поле
+     */
     public static char empty_cell_sign = '+';
-    public static final String SELECT_LANGUAGE = "Select language(EN) Выберите язык(RU)";
+    public static final String SELECT_LANGUAGE = "Select language(EN)/ Выберите язык(RU)";
     public static final String ENGLISH_LANGUAGE = "EN";
     public static final String RUSSIAN_LANGUAGE = "RU";
 
@@ -28,6 +57,8 @@ public class StringConstants {
     public static String NOT_A_DIGIT_IN_INPUT = "";
     public static String TOO_MUCH_DIGITS = "";
     public static String PLAYER = "";
+    public static String FIRST_PLAYER_GAME_RESULT = "";
+    public static String SECOND_PLAYER_GAME_RESULT = "";
     public static void initLanguage (String language) {
         if (language.equals(ENGLISH_LANGUAGE)) {
             INDEX_OUT_OF_FIELD = "INDEX_OUT_OF_FIELD!";
@@ -42,6 +73,8 @@ public class StringConstants {
             NOT_A_DIGIT_IN_INPUT = "Not a digit in input";
             TOO_MUCH_DIGITS = "Too much digits";
             PLAYER = "player";
+            FIRST_PLAYER_GAME_RESULT = "First player game result = ";
+            SECOND_PLAYER_GAME_RESULT = "Second player game result = ";
         } else if (language.equals(RUSSIAN_LANGUAGE)) {
             INDEX_OUT_OF_FIELD = "Индекс за пределами поля";
             INVALID_INDEXES = "Неверный индекс";
@@ -55,6 +88,8 @@ public class StringConstants {
             NOT_A_DIGIT_IN_INPUT = "Во введенных данных не числа";
             TOO_MUCH_DIGITS = "Слишком много чисел";
             PLAYER = "игрок";
+            FIRST_PLAYER_GAME_RESULT = "Результат первого игрока = ";
+            SECOND_PLAYER_GAME_RESULT = "Результат второго игрока = ";
         } else {
             System.out.println("Unsupported language!");
             throw new RuntimeException();
